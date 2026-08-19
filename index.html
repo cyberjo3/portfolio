@@ -264,6 +264,55 @@
   }
   .cred .issuer{font-size:12.5px; color:var(--ink-soft);}
 
+  /* Skills — resource-monitor style */
+  .skill-groups{display:grid; grid-template-columns:1fr 1fr; gap:36px;}
+  .skill-group .group-title{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin-bottom:14px;
+    display:flex;
+    justify-content:space-between;
+  }
+  .skill-row{margin-bottom:14px;}
+  .skill-row:last-child{margin-bottom:0;}
+  .skill-row .skill-label{
+    display:flex;
+    justify-content:space-between;
+    font-size:13.5px;
+    margin-bottom:6px;
+  }
+  .skill-row .skill-label .lvl{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--ink-faint);
+  }
+  .skill-gauge{
+    height:6px;
+    background:var(--line);
+    position:relative;
+    overflow:hidden;
+  }
+  .skill-gauge .fill{
+    position:absolute; left:0; top:0; bottom:0;
+    background:var(--accent);
+  }
+  .skill-gauge .fill.building{
+    background:repeating-linear-gradient(135deg, var(--warm), var(--warm) 5px, #DFA062 5px, #DFA062 10px);
+  }
+  .skill-note{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    color:var(--ink-faint);
+    margin-top:14px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .skill-note .dot{width:6px; height:6px; background:var(--warm); display:inline-block; border-radius:50%;}
+
   /* Projects */
   .projects{display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line);}
   .project{background:var(--surface); padding:24px 26px;}
@@ -342,6 +391,7 @@
     .log-entry{grid-template-columns:1fr; gap:8px;}
     .log-entry .stamp{padding-top:0;}
     .creds{grid-template-columns:1fr;}
+    .skill-groups{grid-template-columns:1fr; gap:28px;}
     .contact .wrap{flex-direction:column; align-items:flex-start;}
   }
   :focus-visible{outline:2px solid var(--warm); outline-offset:2px;}
@@ -472,9 +522,57 @@
     </div>
   </section>
 
+  <section id="skills">
+    <div class="section-head">
+      <span class="section-tag">04 — Resources</span>
+      <h2>Skills</h2>
+    </div>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <div class="group-title"><span>Security &amp; Governance</span></div>
+        <div class="skill-row">
+          <div class="skill-label"><span>ISO/IEC 27001 (ISMS)</span><span class="lvl">EXPERT</span></div>
+          <div class="skill-gauge"><div class="fill" style="width:95%"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label"><span>IT Governance &amp; Policy</span><span class="lvl">EXPERT</span></div>
+          <div class="skill-gauge"><div class="fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label"><span>Risk Assessment &amp; Audit</span><span class="lvl">ADVANCED</span></div>
+          <div class="skill-gauge"><div class="fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label"><span>Team Leadership</span><span class="lvl">ADVANCED</span></div>
+          <div class="skill-gauge"><div class="fill" style="width:85%"></div></div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="group-title"><span>Infrastructure &amp; Network</span></div>
+        <div class="skill-row">
+          <div class="skill-label"><span>Network Security (Fortinet)</span><span class="lvl">ADVANCED</span></div>
+          <div class="skill-gauge"><div class="fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label"><span>Endpoint &amp; Patch Mgmt (NinjaOne)</span><span class="lvl">ADVANCED</span></div>
+          <div class="skill-gauge"><div class="fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label"><span>Cloud Security (AWS / Azure)</span><span class="lvl">LEARNING</span></div>
+          <div class="skill-gauge"><div class="fill building" style="width:40%"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label"><span>Linux Administration</span><span class="lvl">LEARNING</span></div>
+          <div class="skill-gauge"><div class="fill building" style="width:40%"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="skill-note"><span class="dot"></span>LEARNING = actively in progress, hands-on practice underway</div>
+  </section>
+
   <section id="projects">
     <div class="section-head">
-      <span class="section-tag">04 — Tickets</span>
+      <span class="section-tag">05 — Tickets</span>
       <h2>Active Projects</h2>
     </div>
     <div class="projects">
